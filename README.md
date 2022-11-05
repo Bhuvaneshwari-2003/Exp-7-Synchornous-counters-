@@ -45,44 +45,80 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
+Procedure:
+1.Create a new project in QuartusII software.
+
+2.Name the project as uc for upcounter and dc for down counter.
+
+3.Create a new verilog hdl file in the project file.
+
+4.Name the module as dc and uc for down counter and up counter.
+
+5.Within the module declare input and output variables.
+
+6.Create a loop using if-else with condition parameter as reset value.
+
+7.End the loop.
+
+8.End the module.
 
 
 
-### PROGRAM 
+
+PROGRAM: 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:s.bhuvaneshwari 
+RegisterNumber:212221240010
+UP COUNTER :
+module ex6(input CLK,input reset,output[0:3]counter);
+	reg[0:3]counter_up;
+	always@(posedge CLK or posedge reset)
+	begin
+	if(reset)
+	counter_up<=4'd0;
+	else
+	counter_up=counter_up+4'd1;
+	end
+	assign counter=counter_up;
+	endmodule
+ 
+DOWN COUNTER:
+module DC(input CLK,input reset,output[0:3]counter);
+	reg[0:3]counter_dc;
+	always@(posedge CLK or posedge reset)
+	begin
+	if(reset)
+	counter_dc<=4'd0;
+	else
+	counter_dc=counter_dc-4'd1;
+	end
+	assign counter=counter_dc;
+	endmodule
+
+RTL LOGIC UP COUNTER :
+![198284400-19176c40-f85a-4266-bfeb-0171aa1ae579](https://user-images.githubusercontent.com/94828604/200114866-4938c6a0-cc37-4e8f-b127-88d06ea948c0.png)
+RTL LOGIC DOWN COUNTER :
+![198284457-c01d5f94-8624-4f0e-9e35-0a42597f2995](https://user-images.githubusercontent.com/94828604/200114903-bdc0bfb2-26f5-40d6-8550-9d17c757c5e0.png)
+
+
+ TIMING DIGRAMS FOR COUNTERs:
+ UP COUNTER:
+ ![198284516-cd44d999-74ca-4a3f-a051-7c1f747d7b30](https://user-images.githubusercontent.com/94828604/200114951-ae90d2c2-525b-46b6-8a37-f0c2cfb3cd80.png)
+ DOWN COUNTER:
+ ![198284555-21887405-9cd9-4997-8bad-24d70ef79440](https://user-images.githubusercontent.com/94828604/200114993-b9e58512-acd7-4d8d-99f1-4654f4a54d0d.png)
+
+TRUTH TABLE:
+UP COUNTER:
+![Uploading 198289255-7af409cb-997f-4117-8acc-ded95da4d452.png…]()
+DOWN COUNTER:
+![198289364-8275ee57-52ca-4093-9758-28be81b05f63](https://user-images.githubusercontent.com/94828604/200115071-908092ff-1f02-4819-b3af-defd8cae93ca.png)
 
 
 
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+ RESULTS:
+ Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
